@@ -10,15 +10,25 @@
 </form> %>
 
 
-<%= form_tag("/users", method: "post") do %>
-  <%= label_tag(:username, "Username:") %>
-  <%= text_field_tag(:username) %> <br><br>
+<%#= form_tag("/users", method: "post") do %>
+  <%#= label_tag(:username, "Username:") %>
+  <%#= text_field_tag(:username) %> 
+  <%# <br><br> %>
 
-  <%= label_tag(:email, "Email:") %>
-  <%= text_field_tag(:email) %> <br><br>
+  <%#= label_tag(:email, "Email:") %>
+  <%#= text_field_tag(:email) %> 
+  <%# <br><br> %>
 
-  <%= label_tag(:password, "Password:") %>
-  <%= password_field_tag(:password) %> <br><br>
+  <%#= label_tag(:password, "Password:") %>
+  <%#= password_field_tag(:password) %> 
+  <%# <br><br> %>
 
-  <%= submit_tag("Submit") %>
+  <%#= submit_tag("Submit") %>
+<%# end %>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :username %>  <%= f.text_field :username, placeholder: "Your username" %> <br><br>
+  <%= f.label :email %>  <%= f.text_field :email, placeholder: "example@example.com" %> <br><br>
+  <%= f.label :password %>  <%= f.password_field :password, placeholder: "Password" %> <br><br>
+  <%= f.submit %>
 <% end %>
